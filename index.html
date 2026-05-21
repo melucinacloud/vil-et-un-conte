@@ -69,7 +69,8 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 
 @media(max-width:900px){
   .main-layout{flex-direction:column}
-  .col-img{flex:none;width:100%;height:240px}
+  .col-img{flex:none;width:100%;height:160px}
+.col-img img{width:35%;height:auto}
   .col-mid{flex:none;width:100%;border:none}
   .col-form{flex:none;width:100%;padding:2rem 1.5rem;border-top:1px solid rgba(201,152,10,0.2)}
   .form-group,.submit-btn{max-width:100%}
@@ -159,7 +160,7 @@ async function handleSubmit() {
   btn.textContent = 'Envoi...';
   btn.disabled = true;
   try {
-    const res = await fetch('https://worker-vil-et-un-conte.TON-SOUS-DOMAINE.workers.dev', {
+    const res = await fetch('https://vil-et-un-conte.nihongotips.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prenom, nom, email })
