@@ -9,85 +9,69 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#f5ede0;font-family:'Lato',sans-serif;color:#3a2010}
+body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 
-.topbar{background:#3a2010;padding:10px 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar{background:#3a2010;padding:10px 2rem;display:flex;align-items:center;justify-content:center}
 .topbar-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase}
-.topbar-links{display:flex;align-items:center;gap:1.2rem}
-.topbar-links a{font-size:11px;letter-spacing:0.1em;color:#8a6030;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color 0.2s}
-.topbar-links a:hover{color:#c9980a}
 
-.main-layout{display:flex;align-items:stretch;background:#3d2212}
+/* 3 COLONNES */
+.main-layout{display:flex;align-items:stretch;min-height:100vh}
 
-.img-col{width:28%;flex-shrink:0;overflow:hidden}
-.img-col img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(0.9)}
+/* COLONNE GAUCHE — image */
+.col-img{width:25%;flex-shrink:0;overflow:hidden}
+.col-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 
-.right-col{flex:1;display:flex;flex-direction:column;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%)}
+/* COLONNE MILIEU — infos */
+.col-mid{flex:1;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
 
-/* HERO : titre + encadré infos */
-.hero-block{padding:2rem 2.5rem 1.5rem;border-bottom:1px solid rgba(201,152,10,0.2);display:flex;gap:1.5rem;align-items:flex-start}
-.hero-left{flex:1}
-.hero-right{flex-shrink:0;width:200px}
-
-.logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.8}
-.game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;margin-bottom:0.6rem;opacity:0.9}
-.game-title{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:600;color:#f5ede0;line-height:1.1;margin-bottom:0.4rem}
-.game-title em{color:#c9980a;font-style:normal}
+.logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem}
+.game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;opacity:0.9;margin-bottom:0.4rem}
+.game-title{font-family:'Cinzel',serif;font-size:2rem;font-weight:600;color:#f5ede0;line-height:1.1}
 .divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.8rem 0}
-.game-desc{font-size:13px;line-height:1.7;color:#e8d5b8;margin-bottom:1.2rem}
-.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:10px 22px;border-radius:3px;text-decoration:none;transition:background 0.2s}
+.game-desc{font-size:13px;line-height:1.75;color:#e8d5b8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:10px 20px;border-radius:3px;text-decoration:none;transition:background 0.2s;align-self:flex-start}
 .cta-btn:hover{background:#e8b020}
 
-/* ENCADRÉ INFOS */
-.info-card{background:rgba(0,0,0,0.25);border:1px solid rgba(201,152,10,0.3);border-radius:6px;padding:1rem 1.2rem}
-.info-card-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.8rem;opacity:0.8}
-.info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.6rem}
+/* BLOC INFOS */
+.bloc{background:rgba(0,0,0,0.2);border:1px solid rgba(201,152,10,0.25);border-radius:6px;padding:1rem 1.2rem}
+.bloc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.8rem;opacity:0.85}
+.info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.55rem}
 .info-row:last-child{margin-bottom:0}
-.info-row i{font-size:15px;color:#c9980a;flex-shrink:0}
+.info-row i{font-size:15px;color:#c9980a;flex-shrink:0;width:18px}
 .info-row span{font-size:12px;color:#e8d5b8}
-.info-row span strong{color:#f5ede0;font-weight:600}
-.info-divider{height:1px;background:rgba(201,152,10,0.2);margin:0.7rem 0}
-
-/* FORMULAIRE */
-.form-block{padding:1.2rem 2.5rem;border-bottom:1px solid rgba(201,152,10,0.2)}
-.form-block-title{font-family:'Cinzel',serif;font-size:0.85rem;color:#c9980a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem}
-.form-hint{font-size:11px;color:#9a7050;margin-bottom:1rem;line-height:1.5}
-.form-row{display:flex;gap:10px;margin-bottom:10px}
-.form-group{display:flex;flex-direction:column;gap:4px;flex:1}
-.form-group.full{flex:2}
-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a6030}
-input[type=text],input[type=email]{background:rgba(253,247,238,0.1);border:1px solid rgba(212,176,112,0.5);border-radius:4px;padding:8px 10px;color:#f5ede0;font-size:12px;font-family:'Lato',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
-input[type=text]::placeholder,input[type=email]::placeholder{color:rgba(245,237,224,0.35)}
-input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
-.submit-btn{margin-top:0.5rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:10px 24px;border-radius:3px;cursor:pointer;transition:background 0.2s;font-weight:700}
-.submit-btn:hover{background:#e8b020}
-.submit-btn:disabled{opacity:0.4;cursor:default}
-.success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.6rem;font-style:italic}
+.info-row span strong{color:#f5ede0}
+.bloc-sep{height:1px;background:rgba(201,152,10,0.2);margin:0.7rem 0}
 
 /* CONTACT */
-.contact-block{padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem}
-.contact-block p{font-size:12px;color:#e8d5b8;line-height:1.6}
-.contact-block a.mail{color:#c9980a;text-decoration:none;font-weight:700}
-.contact-block a.mail:hover{text-decoration:underline}
-.linktree-btn{display:inline-flex;align-items:center;gap:7px;background:transparent;color:#e8c060;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:8px 16px;border-radius:3px;text-decoration:none;border:1px solid rgba(201,152,10,0.4);transition:all 0.2s;white-space:nowrap}
-.linktree-btn:hover{background:rgba(201,152,10,0.15);border-color:#c9980a}
+.contact-links{display:flex;flex-direction:column;gap:0.6rem}
+.contact-links a{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#e8c060;text-decoration:none;transition:color 0.2s}
+.contact-links a:hover{color:#c9980a}
+.contact-links a i{font-size:15px}
+
+/* COLONNE DROITE — formulaire */
+.col-form{width:280px;flex-shrink:0;background:rgba(0,0,0,0.3);padding:2.5rem 1.8rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(201,152,10,0.15)}
+
+.form-title{font-family:'Cinzel',serif;font-size:0.9rem;color:#c9980a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem}
+.form-hint{font-size:11px;color:#9a7050;margin-bottom:1.4rem;line-height:1.6}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a6030}
+input[type=text],input[type=email]{background:rgba(253,247,238,0.08);border:1px solid rgba(212,176,112,0.4);border-radius:4px;padding:9px 10px;color:#f5ede0;font-size:12px;font-family:'Lato',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
+input[type=text]::placeholder,input[type=email]::placeholder{color:rgba(245,237,224,0.3)}
+input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
+.submit-btn{margin-top:0.6rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:11px;border-radius:3px;cursor:pointer;transition:background 0.2s;width:100%;font-weight:700}
+.submit-btn:hover{background:#e8b020}
+.submit-btn:disabled{opacity:0.4;cursor:default}
+.success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.8rem;font-style:italic;text-align:center;line-height:1.6}
 
 .footer{background:#3a2010;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .footer p{font-size:11px;color:#7a5030;letter-spacing:0.08em}
 .footer a{color:#9a7040;text-decoration:none}
 
 @media(max-width:900px){
-  .hero-block{flex-direction:column}
-  .hero-right{width:100%}
-}
-@media(max-width:768px){
   .main-layout{flex-direction:column}
-  .img-col{width:100%;height:260px}
-  .hero-block,.form-block,.contact-block{padding-left:1.5rem;padding-right:1.5rem}
-  .game-title{font-size:1.8rem}
-  .form-row{flex-direction:column}
-  .topbar{justify-content:center;text-align:center}
-  .topbar-links{justify-content:center}
+  .col-img{width:100%;height:280px}
+  .col-form{width:100%;border-left:none;border-top:1px solid rgba(201,152,10,0.2)}
+  .col-mid{border:none}
 }
 </style>
 </head>
@@ -95,76 +79,68 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 
 <div class="topbar">
   <span class="topbar-brand">Lakesis Games</span>
-  <div class="topbar-links">
-    <a href="mailto:lakesisgames@gmail.com"><i class="ti ti-mail"></i> Contact</a>
-    <a href="https://linktr.ee/lakesisgames" target="_blank"><i class="ti ti-link"></i> Nous suivre</a>
-  </div>
 </div>
 
 <div class="main-layout">
-  <div class="img-col">
+
+  <!-- GAUCHE : image -->
+  <div class="col-img">
     <img src="Affiche_boite.png" alt="Illustration Vil et un Conte"/>
   </div>
 
-  <div class="right-col">
-
-    <div class="hero-block">
-      <div class="hero-left">
-        <div class="logo-small">Lakesis Games présente</div>
-        <div class="game-type">Jeu d'ambiance · Narration</div>
-        <h1 class="game-title">Vil et un Conte</h1>
-        <div class="divider"></div>
-        <p class="game-desc">Oubliez le gentil qui gagne toujours. Ici, vous incarnez les méchants des contes et racontez votre propre version de l'histoire.</p>
-        <a class="cta-btn" href="https://www.philibertnet.com/fr/lakesis-games/175840-vil-et-un-conte-base-extension-0726529872286.html" target="_blank">
-          <i class="ti ti-shopping-cart"></i> Acheter sur Philibert
-        </a>
-      </div>
-
-      <div class="hero-right">
-        <div class="info-card">
-          <div class="info-card-title">Le jeu</div>
-          <div class="info-row"><i class="ti ti-users"></i><span><strong>2 – 4</strong> joueurs</span></div>
-          <div class="info-row"><i class="ti ti-clock"></i><span><strong>30 min</strong></span></div>
-          <div class="info-row"><i class="ti ti-star"></i><span>Dès <strong>10 ans</strong></span></div>
-          <div class="info-row"><i class="ti ti-cards"></i><span><strong>Base + extension</strong></span></div>
-          <div class="info-divider"></div>
-          <div class="info-card-title">Équipe</div>
-          <div class="info-row"><i class="ti ti-pencil"></i><span><strong>Stéphane Moiroux</strong></span></div>
-          <div class="info-row"><i class="ti ti-brush"></i><span><strong>Sylvaine Schemmel</strong></span></div>
-          <div class="info-row"><i class="ti ti-building"></i><span><strong>Lakesis Games</strong></span></div>
-        </div>
-      </div>
+  <!-- MILIEU : infos -->
+  <div class="col-mid">
+    <div>
+      <div class="logo-small">Lakesis Games présente</div>
+      <div class="game-type">Jeu d'ambiance · Narration</div>
+      <h1 class="game-title">Vil et un Conte</h1>
+      <div class="divider"></div>
+      <p class="game-desc">Oubliez le gentil qui gagne toujours. Ici, vous incarnez les méchants des contes et racontez votre propre version de l'histoire.</p>
     </div>
 
-    <div class="form-block">
-      <div class="form-block-title">Restez connectés</div>
-      <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte.</p>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" placeholder="Chaperon"/>
-        </div>
-        <div class="form-group">
-          <label for="nom">Nom</label>
-          <input type="text" id="nom" placeholder="Rouge"/>
-        </div>
-        <div class="form-group full">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="vous@exemple.fr"/>
-        </div>
-      </div>
-      <button class="submit-btn" onclick="handleSubmit()">S'inscrire</button>
-      <div class="success-msg" id="success">✦ Inscription enregistrée — à bientôt dans les bois.</div>
+    <a class="cta-btn" href="https://www.philibertnet.com/fr/lakesis-games/175840-vil-et-un-conte-base-extension-0726529872286.html" target="_blank">
+      <i class="ti ti-shopping-cart"></i> Acheter sur Philibert
+    </a>
+
+    <div class="bloc">
+      <div class="bloc-title">Le jeu</div>
+      <div class="info-row"><i class="ti ti-users"></i><span><strong>2 – 4</strong> joueurs</span></div>
+      <div class="info-row"><i class="ti ti-clock"></i><span><strong>30 min</strong></span></div>
+      <div class="info-row"><i class="ti ti-star"></i><span>Dès <strong>10 ans</strong></span></div>
+      <div class="info-row"><i class="ti ti-cards"></i><span><strong>Base + extension</strong></span></div>
+      <div class="bloc-sep"></div>
+      <div class="bloc-title">Équipe</div>
+      <div class="info-row"><i class="ti ti-pencil"></i><span>Stéphane Moiroux</span></div>
+      <div class="info-row"><i class="ti ti-brush"></i><span>Sylvaine Schemmel</span></div>
+      <div class="info-row"><i class="ti ti-building"></i><span>Lakesis Games</span></div>
     </div>
 
-    <div class="contact-block">
-      <p>Une question ? <a class="mail" href="mailto:lakesisgames@gmail.com">lakesisgames@gmail.com</a></p>
-      <a class="linktree-btn" href="https://linktr.ee/lakesisgames" target="_blank">
-        <i class="ti ti-link"></i> Nous suivre
-      </a>
+    <div class="contact-links">
+      <a href="mailto:lakesisgames@gmail.com"><i class="ti ti-mail"></i> lakesisgames@gmail.com</a>
+      <a href="https://linktr.ee/lakesisgames" target="_blank"><i class="ti ti-link"></i> Nous suivre</a>
     </div>
-
   </div>
+
+  <!-- DROITE : formulaire -->
+  <div class="col-form">
+    <div class="form-title">Restez connectés</div>
+    <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte — sorties, événements, nouveautés.</p>
+    <div class="form-group">
+      <label for="prenom">Prénom</label>
+      <input type="text" id="prenom" placeholder="Chaperon"/>
+    </div>
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" placeholder="Rouge"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" placeholder="vous@exemple.fr"/>
+    </div>
+    <button class="submit-btn" onclick="handleSubmit()">S'inscrire</button>
+    <div class="success-msg" id="success">✦ Inscription enregistrée —<br>à bientôt dans les bois.</div>
+  </div>
+
 </div>
 
 <div class="footer">
