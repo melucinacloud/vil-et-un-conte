@@ -9,30 +9,36 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
 body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 
+/* TOPBAR */
 .topbar{background:#3a2010;padding:10px 2rem;display:flex;align-items:center;justify-content:center}
 .topbar-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase}
 
-/* 3 COLONNES */
-.main-layout{display:flex;align-items:stretch;min-height:100vh}
+/* 3 COLONNES — prend toute la largeur */
+.main-layout{display:flex;align-items:stretch;min-height:calc(100vh - 80px);width:100%}
 
-/* COLONNE GAUCHE — image */
-.col-img{width:22%;flex-shrink:0;overflow:hidden}
-.col-img img{width:50%;height:100%;object-fit:cover;object-position:center top;display:block;margin:0 auto}
+/* GAUCHE : image petite dans une colonne étroite */
+.col-img{width:12%;flex-shrink:0;overflow:hidden;background:#2e1a0e;display:flex;align-items:center;justify-content:center}
+.col-img img{width:100%;height:auto;display:block;object-fit:contain}
 
-/* COLONNE MILIEU — infos */
-.col-mid{flex:0 0 350px;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
+/* MILIEU : infos — largeur fixe */
+.col-mid{width:340px;flex-shrink:0;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
 
+/* DROITE : formulaire — prend tout le reste */
+.col-form{flex:1;background:rgba(0,0,0,0.3);padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(201,152,10,0.15)}
+
+/* MILIEU — contenu */
 .logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem}
 .game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;opacity:0.9;margin-bottom:0.4rem}
-.game-title{font-family:'Cinzel',serif;font-size:2rem;font-weight:600;color:#f5ede0;line-height:1.1}
+.game-title{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:600;color:#f5ede0;line-height:1.1}
 .divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.8rem 0}
 .game-desc{font-size:13px;line-height:1.75;color:#e8d5b8}
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:10px 20px;border-radius:3px;text-decoration:none;transition:background 0.2s;align-self:flex-start}
 .cta-btn:hover{background:#e8b020}
 
-/* BLOC INFOS */
+/* ENCADRÉ INFOS */
 .bloc{background:rgba(0,0,0,0.2);border:1px solid rgba(201,152,10,0.25);border-radius:6px;padding:1rem 1.2rem}
 .bloc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.8rem;opacity:0.85}
 .info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.55rem}
@@ -48,30 +54,32 @@ body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 .contact-links a:hover{color:#c9980a}
 .contact-links a i{font-size:15px}
 
-/* COLONNE DROITE — formulaire */
-.col-form{width:380px;flex-shrink:0;background:rgba(0,0,0,0.3);padding:2.5rem 1.8rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(201,152,10,0.15)}
-
+/* FORMULAIRE */
 .form-title{font-family:'Cinzel',serif;font-size:0.9rem;color:#c9980a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem}
 .form-hint{font-size:11px;color:#9a7050;margin-bottom:1.4rem;line-height:1.6}
-.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;max-width:400px}
 label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a6030}
 input[type=text],input[type=email]{background:rgba(253,247,238,0.08);border:1px solid rgba(212,176,112,0.4);border-radius:4px;padding:9px 10px;color:#f5ede0;font-size:12px;font-family:'Lato',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
 input[type=text]::placeholder,input[type=email]::placeholder{color:rgba(245,237,224,0.3)}
 input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
-.submit-btn{margin-top:0.6rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:11px;border-radius:3px;cursor:pointer;transition:background 0.2s;width:100%;font-weight:700}
+.submit-btn{margin-top:0.6rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:11px;border-radius:3px;cursor:pointer;transition:background 0.2s;width:100%;max-width:400px;font-weight:700}
 .submit-btn:hover{background:#e8b020}
 .submit-btn:disabled{opacity:0.4;cursor:default}
-.success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.8rem;font-style:italic;text-align:center;line-height:1.6}
+.success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.8rem;font-style:italic;line-height:1.6}
 
+/* FOOTER */
 .footer{background:#3a2010;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .footer p{font-size:11px;color:#7a5030;letter-spacing:0.08em}
 .footer a{color:#9a7040;text-decoration:none}
 
+/* RESPONSIVE */
 @media(max-width:900px){
   .main-layout{flex-direction:column}
-  .col-img{width:100%;height:280px}
-  .col-form{width:100%;border-left:none;border-top:1px solid rgba(201,152,10,0.2)}
-  .col-mid{border:none}
+  .col-img{width:100%;height:220px}
+  .col-img img{width:50%;height:100%;object-fit:contain}
+  .col-mid{width:100%;border:none}
+  .col-form{flex:none;width:100%;border-left:none;border-top:1px solid rgba(201,152,10,0.2);padding:2rem 1.5rem}
+  .form-group,.submit-btn{max-width:100%}
 }
 </style>
 </head>
@@ -124,7 +132,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
   <!-- DROITE : formulaire -->
   <div class="col-form">
     <div class="form-title">Restez connectés</div>
-    <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte : sorties, événements, nouveautés.</p>
+    <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte — sorties, événements, nouveautés.</p>
     <div class="form-group">
       <label for="prenom">Prénom</label>
       <input type="text" id="prenom" placeholder="Chaperon"/>
@@ -138,7 +146,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
       <input type="email" id="email" placeholder="vous@exemple.fr"/>
     </div>
     <button class="submit-btn" onclick="handleSubmit()">S'inscrire</button>
-    <div class="success-msg" id="success">✦ Inscription enregistrée.</div>
+    <div class="success-msg" id="success">✦ Inscription enregistrée — à bientôt dans les bois.</div>
   </div>
 
 </div>
