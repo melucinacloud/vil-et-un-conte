@@ -64,8 +64,8 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 .success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.8rem;font-style:italic;line-height:1.6}
 
 .footer{background:#3a2010;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-.footer p{font-size:11px;color:#7a5030;letter-spacing:0.08em}
-.footer a{color:#9a7040;text-decoration:none}
+.footer p{font-size:11px;letter-spacing:0.08em}
+.footer a{color:#c9980a;text-decoration:underline;font-size:11px}
 
 @media(max-width:900px){
   .main-layout{flex-direction:column}
@@ -74,6 +74,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
   .col-mid{flex:none;width:100%;border:none}
   .col-form{flex:none;width:100%;padding:2rem 1.5rem;border-top:1px solid rgba(201,152,10,0.2)}
   .form-group,.submit-btn{max-width:100%}
+
 }
 </style>
 </head>
@@ -137,14 +138,14 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
       <input type="email" id="email" placeholder="vous@exemple.fr"/>
     </div>
     <button class="submit-btn" onclick="handleSubmit()">S'inscrire</button>
-    <div class="success-msg" id="success">✦ Inscription enregistrée — à bientôt dans les bois.</div>
+    <div class="success-msg" id="success">✦ Inscription enregistrée.</div>
   </div>
 
 </div>
 
 <div class="footer">
   <p>© 2025 Lakesis Games</p>
-  <p><a href="#">Mentions légales</a></p>
+  <p><a href="mentions-legales.html">Mentions légales</a></p>
 </div>
 
 <script>
