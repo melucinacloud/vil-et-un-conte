@@ -19,20 +19,20 @@ body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 
 /* GAUCHE 20% — image */
 .col-img{flex:0 0 20%;overflow:hidden;background:#2e1a0e;display:flex;align-items:center;justify-content:center}
-.col-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.col-img img{width:50%;height:auto;object-fit:contain;object-position:center top;display:block;margin:0 auto}
 
 /* MILIEU 35% — infos */
 .col-mid{flex:0 0 35%;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1.2rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
 
 /* DROITE 45% — formulaire */
-.col-form{flex:0 0 45%;background:rgba(0,0,0,0.25);padding:2rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.col-form{flex:0 0 45%;background:rgba(0,0,0,0.25);padding:2rem 3rem;display:flex;flex-direction:column;justify-content:center;align-items:center}
 
 /* MILIEU contenu */
 .logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;opacity:0.8}
 .game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;opacity:0.9}
-.game-title{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:600;color:#f5ede0;line-height:1.1}
+.game-title{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:600;color:#f5ede0;line-height:1.1}
 .divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.6rem 0}
-.game-desc{font-size:13px;line-height:1.7;color:#e8d5b8}
+.game-desc{font-size:15px;line-height:1.7;color:#e8d5b8}
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:9px 18px;border-radius:3px;text-decoration:none;transition:background 0.2s;align-self:flex-start}
 .cta-btn:hover{background:#e8b020}
 
@@ -41,7 +41,7 @@ body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 .info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.5rem}
 .info-row:last-child{margin-bottom:0}
 .info-row i{font-size:14px;color:#c9980a;flex-shrink:0;width:16px}
-.info-row span{font-size:12px;color:#e8d5b8}
+.info-row span{font-size:14px;color:#e8d5b8}
 .info-row span strong{color:#f5ede0}
 .bloc-sep{height:1px;background:rgba(201,152,10,0.2);margin:0.6rem 0}
 
@@ -53,7 +53,7 @@ body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 /* FORMULAIRE */
 .form-title{font-family:'Cinzel',serif;font-size:0.9rem;color:#c9980a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem}
 .form-hint{font-size:11px;color:#9a7050;margin-bottom:1.2rem;line-height:1.6}
-.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;max-width:360px}
+.form-group,.submit-btn{max-width:320px;width:100%}
 label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a6030}
 input[type=text],input[type=email]{background:rgba(253,247,238,0.08);border:1px solid rgba(212,176,112,0.4);border-radius:4px;padding:9px 10px;color:#f5ede0;font-size:12px;font-family:'Lato',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
 input[type=text]::placeholder,input[type=email]::placeholder{color:rgba(245,237,224,0.3)}
@@ -90,7 +90,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 
   <div class="col-mid">
     <div>
-      <div class="logo-small">Lakesis Games présente</div>
+      <div class="logo-small">Lakésis Games présente</div>
       <div class="game-type">Jeu d'ambiance · Narration</div>
       <h1 class="game-title">Vil et un Conte</h1>
       <div class="divider"></div>
@@ -111,7 +111,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
       <div class="bloc-title">Équipe</div>
       <div class="info-row"><i class="ti ti-pencil"></i><span>Stéphane Moiroux</span></div>
       <div class="info-row"><i class="ti ti-brush"></i><span>Sylvaine Schemmel</span></div>
-      <div class="info-row"><i class="ti ti-building"></i><span>Lakesis Games</span></div>
+      <div class="info-row"><i class="ti ti-building"></i><span>Lakésis Games</span></div>
     </div>
 
     <div class="contact-links">
@@ -122,7 +122,7 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 
   <div class="col-form">
     <div class="form-title">Restez connectés</div>
-    <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte — sorties, événements, nouveautés.</p>
+    <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte : sorties, événements, nouveautés.</p>
     <div class="form-group">
       <label for="prenom">Prénom</label>
       <input type="text" id="prenom" placeholder="Chaperon"/>
