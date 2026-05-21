@@ -12,73 +12,66 @@
 html,body{height:100%}
 body{background:#3d2212;font-family:'Lato',sans-serif;color:#3a2010}
 
-/* TOPBAR */
 .topbar{background:#3a2010;padding:10px 2rem;display:flex;align-items:center;justify-content:center}
 .topbar-brand{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase}
 
-/* 3 COLONNES — prend toute la largeur */
 .main-layout{display:flex;align-items:stretch;min-height:calc(100vh - 80px);width:100%}
 
-/* GAUCHE : image petite dans une colonne étroite */
-.col-img{width:12%;flex-shrink:0;overflow:hidden;background:#2e1a0e;display:flex;align-items:center;justify-content:center}
-.col-img img{width:100%;height:auto;display:block;object-fit:contain}
+/* GAUCHE 20% — image */
+.col-img{flex:0 0 20%;overflow:hidden;background:#2e1a0e;display:flex;align-items:center;justify-content:center}
+.col-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 
-/* MILIEU : infos — largeur fixe */
-.col-mid{width:340px;flex-shrink:0;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
+/* MILIEU 35% — infos */
+.col-mid{flex:0 0 35%;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1.2rem;border-left:1px solid rgba(201,152,10,0.15);border-right:1px solid rgba(201,152,10,0.15)}
 
-/* DROITE : formulaire — prend tout le reste */
-.col-form{flex:1;background:rgba(0,0,0,0.3);padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(201,152,10,0.15)}
+/* DROITE 45% — formulaire */
+.col-form{flex:0 0 45%;background:rgba(0,0,0,0.25);padding:2rem 3rem;display:flex;flex-direction:column;justify-content:center}
 
-/* MILIEU — contenu */
-.logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem}
-.game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;opacity:0.9;margin-bottom:0.4rem}
-.game-title{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:600;color:#f5ede0;line-height:1.1}
-.divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.8rem 0}
-.game-desc{font-size:13px;line-height:1.75;color:#e8d5b8}
-.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:10px 20px;border-radius:3px;text-decoration:none;transition:background 0.2s;align-self:flex-start}
+/* MILIEU contenu */
+.logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;opacity:0.8}
+.game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;opacity:0.9}
+.game-title{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:600;color:#f5ede0;line-height:1.1}
+.divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.6rem 0}
+.game-desc{font-size:13px;line-height:1.7;color:#e8d5b8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:9px 18px;border-radius:3px;text-decoration:none;transition:background 0.2s;align-self:flex-start}
 .cta-btn:hover{background:#e8b020}
 
-/* ENCADRÉ INFOS */
-.bloc{background:rgba(0,0,0,0.2);border:1px solid rgba(201,152,10,0.25);border-radius:6px;padding:1rem 1.2rem}
-.bloc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.8rem;opacity:0.85}
-.info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.55rem}
+.bloc{background:rgba(0,0,0,0.2);border:1px solid rgba(201,152,10,0.25);border-radius:6px;padding:0.9rem 1.1rem}
+.bloc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.7rem;opacity:0.85}
+.info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.5rem}
 .info-row:last-child{margin-bottom:0}
-.info-row i{font-size:15px;color:#c9980a;flex-shrink:0;width:18px}
+.info-row i{font-size:14px;color:#c9980a;flex-shrink:0;width:16px}
 .info-row span{font-size:12px;color:#e8d5b8}
 .info-row span strong{color:#f5ede0}
-.bloc-sep{height:1px;background:rgba(201,152,10,0.2);margin:0.7rem 0}
+.bloc-sep{height:1px;background:rgba(201,152,10,0.2);margin:0.6rem 0}
 
-/* CONTACT */
-.contact-links{display:flex;flex-direction:column;gap:0.6rem}
+.contact-links{display:flex;flex-direction:column;gap:0.5rem}
 .contact-links a{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#e8c060;text-decoration:none;transition:color 0.2s}
 .contact-links a:hover{color:#c9980a}
-.contact-links a i{font-size:15px}
+.contact-links a i{font-size:14px}
 
 /* FORMULAIRE */
 .form-title{font-family:'Cinzel',serif;font-size:0.9rem;color:#c9980a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem}
-.form-hint{font-size:11px;color:#9a7050;margin-bottom:1.4rem;line-height:1.6}
-.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;max-width:400px}
+.form-hint{font-size:11px;color:#9a7050;margin-bottom:1.2rem;line-height:1.6}
+.form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;max-width:360px}
 label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a6030}
 input[type=text],input[type=email]{background:rgba(253,247,238,0.08);border:1px solid rgba(212,176,112,0.4);border-radius:4px;padding:9px 10px;color:#f5ede0;font-size:12px;font-family:'Lato',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
 input[type=text]::placeholder,input[type=email]::placeholder{color:rgba(245,237,224,0.3)}
 input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
-.submit-btn{margin-top:0.6rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:11px;border-radius:3px;cursor:pointer;transition:background 0.2s;width:100%;max-width:400px;font-weight:700}
+.submit-btn{margin-top:0.6rem;background:#c9980a;border:none;color:#3a2010;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:11px;border-radius:3px;cursor:pointer;transition:background 0.2s;width:100%;max-width:360px;font-weight:700}
 .submit-btn:hover{background:#e8b020}
 .submit-btn:disabled{opacity:0.4;cursor:default}
 .success-msg{display:none;font-size:12px;color:#c9980a;margin-top:0.8rem;font-style:italic;line-height:1.6}
 
-/* FOOTER */
 .footer{background:#3a2010;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .footer p{font-size:11px;color:#7a5030;letter-spacing:0.08em}
 .footer a{color:#9a7040;text-decoration:none}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .main-layout{flex-direction:column}
-  .col-img{width:100%;height:220px}
-  .col-img img{width:50%;height:100%;object-fit:contain}
-  .col-mid{width:100%;border:none}
-  .col-form{flex:none;width:100%;border-left:none;border-top:1px solid rgba(201,152,10,0.2);padding:2rem 1.5rem}
+  .col-img{flex:none;width:100%;height:240px}
+  .col-mid{flex:none;width:100%;border:none}
+  .col-form{flex:none;width:100%;padding:2rem 1.5rem;border-top:1px solid rgba(201,152,10,0.2)}
   .form-group,.submit-btn{max-width:100%}
 }
 </style>
@@ -91,12 +84,10 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 
 <div class="main-layout">
 
-  <!-- GAUCHE : image -->
   <div class="col-img">
     <img src="Affiche_boite.png" alt="Illustration Vil et un Conte"/>
   </div>
 
-  <!-- MILIEU : infos -->
   <div class="col-mid">
     <div>
       <div class="logo-small">Lakesis Games présente</div>
@@ -129,7 +120,6 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
     </div>
   </div>
 
-  <!-- DROITE : formulaire -->
   <div class="col-form">
     <div class="form-title">Restez connectés</div>
     <p class="form-hint">Inscrivez-vous pour suivre les actualités de Vil et un Conte — sorties, événements, nouveautés.</p>
