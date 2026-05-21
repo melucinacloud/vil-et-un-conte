@@ -17,38 +17,36 @@ body{background:#f5ede0;font-family:'Lato',sans-serif;color:#3a2010}
 .topbar-links a{font-size:11px;letter-spacing:0.1em;color:#8a6030;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color 0.2s}
 .topbar-links a:hover{color:#c9980a}
 
-/* LAYOUT PRINCIPAL : image gauche | contenu droite */
-.main-layout{display:flex;align-items:stretch;background:#3d2212;min-height:600px}
+.main-layout{display:flex;align-items:stretch;background:#3d2212}
 
 .img-col{width:28%;flex-shrink:0;overflow:hidden}
 .img-col img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(0.9)}
 
 .right-col{flex:1;display:flex;flex-direction:column;background:linear-gradient(160deg,#3d2212 0%,#5a3018 100%)}
 
-/* HERO : titre + tags + bouton */
-.hero-block{padding:2rem 2.5rem 1.5rem;border-bottom:1px solid rgba(201,152,10,0.2)}
+/* HERO : titre + encadré infos */
+.hero-block{padding:2rem 2.5rem 1.5rem;border-bottom:1px solid rgba(201,152,10,0.2);display:flex;gap:1.5rem;align-items:flex-start}
+.hero-left{flex:1}
+.hero-right{flex-shrink:0;width:200px}
+
 .logo-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;color:#c9980a;text-transform:uppercase;margin-bottom:0.6rem;opacity:0.8}
 .game-type{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c9980a;margin-bottom:0.6rem;opacity:0.9}
 .game-title{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:600;color:#f5ede0;line-height:1.1;margin-bottom:0.4rem}
 .game-title em{color:#c9980a;font-style:normal}
 .divider{width:48px;height:2px;background:linear-gradient(90deg,#c9980a,#8a5020);border-radius:2px;margin:0.8rem 0}
-.game-desc{font-size:13px;line-height:1.7;color:#e8d5b8;margin-bottom:1rem}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.2rem}
-.tag{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;background:rgba(201,152,10,0.18);border:1px solid rgba(201,152,10,0.5);color:#e8c060}
+.game-desc{font-size:13px;line-height:1.7;color:#e8d5b8;margin-bottom:1.2rem}
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#c9980a;color:#3a2010;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:10px 22px;border-radius:3px;text-decoration:none;transition:background 0.2s}
 .cta-btn:hover{background:#e8b020}
 
-/* INFOS DU JEU */
-.info-block{padding:1.2rem 2.5rem;border-bottom:1px solid rgba(201,152,10,0.2);display:flex;gap:1.5rem;flex-wrap:wrap}
-.info-item{display:flex;align-items:center;gap:8px}
-.info-item i{font-size:18px;color:#c9980a}
-.info-item .val{font-family:'Cinzel',serif;font-size:13px;color:#f5ede0;font-weight:600}
-.info-item .lbl{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#9a7050;margin-left:2px}
-
-/* CREDITS */
-.credits-block{padding:1rem 2.5rem;border-bottom:1px solid rgba(201,152,10,0.2);display:flex;gap:2rem;flex-wrap:wrap}
-.credit-item .label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#8a6030;margin-bottom:2px}
-.credit-item .val{font-size:12px;color:#e8c080;font-family:'Cinzel',serif}
+/* ENCADRÉ INFOS */
+.info-card{background:rgba(0,0,0,0.25);border:1px solid rgba(201,152,10,0.3);border-radius:6px;padding:1rem 1.2rem}
+.info-card-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c9980a;margin-bottom:0.8rem;opacity:0.8}
+.info-row{display:flex;align-items:center;gap:8px;margin-bottom:0.6rem}
+.info-row:last-child{margin-bottom:0}
+.info-row i{font-size:15px;color:#c9980a;flex-shrink:0}
+.info-row span{font-size:12px;color:#e8d5b8}
+.info-row span strong{color:#f5ede0;font-weight:600}
+.info-divider{height:1px;background:rgba(201,152,10,0.2);margin:0.7rem 0}
 
 /* FORMULAIRE */
 .form-block{padding:1.2rem 2.5rem;border-bottom:1px solid rgba(201,152,10,0.2)}
@@ -78,10 +76,14 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
 .footer p{font-size:11px;color:#7a5030;letter-spacing:0.08em}
 .footer a{color:#9a7040;text-decoration:none}
 
+@media(max-width:900px){
+  .hero-block{flex-direction:column}
+  .hero-right{width:100%}
+}
 @media(max-width:768px){
   .main-layout{flex-direction:column}
   .img-col{width:100%;height:260px}
-  .hero-block,.info-block,.credits-block,.form-block,.contact-block{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-block,.form-block,.contact-block{padding-left:1.5rem;padding-right:1.5rem}
   .game-title{font-size:1.8rem}
   .form-row{flex-direction:column}
   .topbar{justify-content:center;text-align:center}
@@ -107,53 +109,30 @@ input[type=text]:focus,input[type=email]:focus{border-color:#c9980a}
   <div class="right-col">
 
     <div class="hero-block">
-      <div class="logo-small">Lakesis Games présente</div>
-      <div class="game-type">Jeu d'ambiance · Narration</div>
-      <h1 class="game-title">Vil et un Conte</h1>
-      <div class="divider"></div>
-      <p class="game-desc">Oubliez le gentil qui gagne toujours. Ici, vous incarnez les méchants des contes et racontez votre propre version de l'histoire.</p>
-      <div class="tags">
-        <span class="tag">2 – 4 joueurs</span>
-        <span class="tag">30 min</span>
-        <span class="tag">Dès 10 ans</span>
-        <span class="tag">Base + extension</span>
+      <div class="hero-left">
+        <div class="logo-small">Lakesis Games présente</div>
+        <div class="game-type">Jeu d'ambiance · Narration</div>
+        <h1 class="game-title">Vil et un Conte</h1>
+        <div class="divider"></div>
+        <p class="game-desc">Oubliez le gentil qui gagne toujours. Ici, vous incarnez les méchants des contes et racontez votre propre version de l'histoire.</p>
+        <a class="cta-btn" href="https://www.philibertnet.com/fr/lakesis-games/175840-vil-et-un-conte-base-extension-0726529872286.html" target="_blank">
+          <i class="ti ti-shopping-cart"></i> Acheter sur Philibert
+        </a>
       </div>
-      <a class="cta-btn" href="https://www.philibertnet.com/fr/lakesis-games/175840-vil-et-un-conte-base-extension-0726529872286.html" target="_blank">
-        <i class="ti ti-shopping-cart"></i> Acheter sur Philibert
-      </a>
-    </div>
 
-    <div class="info-block">
-      <div class="info-item">
-        <i class="ti ti-users"></i>
-        <span class="val">2–4</span><span class="lbl">joueurs</span>
-      </div>
-      <div class="info-item">
-        <i class="ti ti-clock"></i>
-        <span class="val">30 min</span>
-      </div>
-      <div class="info-item">
-        <i class="ti ti-star"></i>
-        <span class="val">10 ans+</span>
-      </div>
-      <div class="info-item">
-        <i class="ti ti-book"></i>
-        <span class="val">Narration</span>
-      </div>
-    </div>
-
-    <div class="credits-block">
-      <div class="credit-item">
-        <div class="label">Auteur</div>
-        <div class="val">Stéphane Moiroux</div>
-      </div>
-      <div class="credit-item">
-        <div class="label">Illustration</div>
-        <div class="val">Sylvaine Schemmel</div>
-      </div>
-      <div class="credit-item">
-        <div class="label">Éditeur</div>
-        <div class="val">Lakesis Games</div>
+      <div class="hero-right">
+        <div class="info-card">
+          <div class="info-card-title">Le jeu</div>
+          <div class="info-row"><i class="ti ti-users"></i><span><strong>2 – 4</strong> joueurs</span></div>
+          <div class="info-row"><i class="ti ti-clock"></i><span><strong>30 min</strong></span></div>
+          <div class="info-row"><i class="ti ti-star"></i><span>Dès <strong>10 ans</strong></span></div>
+          <div class="info-row"><i class="ti ti-cards"></i><span><strong>Base + extension</strong></span></div>
+          <div class="info-divider"></div>
+          <div class="info-card-title">Équipe</div>
+          <div class="info-row"><i class="ti ti-pencil"></i><span><strong>Stéphane Moiroux</strong></span></div>
+          <div class="info-row"><i class="ti ti-brush"></i><span><strong>Sylvaine Schemmel</strong></span></div>
+          <div class="info-row"><i class="ti ti-building"></i><span><strong>Lakesis Games</strong></span></div>
+        </div>
       </div>
     </div>
 
